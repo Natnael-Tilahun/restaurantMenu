@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <!-- fontawsome -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -31,114 +32,81 @@
       <p>The best burgers and pizzas in town.</p>
     </header>
 
-    <main class="w-full flex flex-col items-center px-7 py-5">
-      <div
-        class="border-b-2 flex w-full md:w-2/4 justify-between items-center py-12 px-0 mx-auto"
-      >
-        <div class="flex gap-3 md:gap-6">
-          <img src="./images/pizza.png" alt="pizza image" />
-          <div class="flex flex-col gap-2">
-            <h1>Pizza</h1>
-            <p class="text-gray-500">pepperoni,mushrom,mozarella</p>
-            <label for="">$514</label>
-          </div>
-        </div>
-        <i class="fa-regular fa-circle-plus">+</i>
-      </div>
-
-      <div
-        class="border-b-2 flex w-full md:w-2/4 justify-between items-center py-12 px-0 mx-auto"
-      >
-        <div class="flex gap-3 md:gap-6">
-          <img src="./images/pizza.png" alt="pizza image" />
-          <div class="flex flex-col gap-2">
-            <h1>Pizza</h1>
-            <p class="text-gray-500">pepperoni,mushrom,mozarella</p>
-            <label for="">$514</label>
-          </div>
-        </div>
-        <i class="fa-regular fa-circle-plus">+</i>
-      </div>
-
-      <div
-        class="border-b-2 flex w-full md:w-2/4 justify-between items-center py-12 px-0 mx-auto"
-      >
-        <div class="flex gap-3 md:gap-6">
-          <img src="./images/pizza.png" alt="pizza image" />
-          <div class="flex flex-col gap-2">
-            <h1>Pizza</h1>
-            <p class="text-gray-500">pepperoni,mushrom,mozarella</p>
-            <label for="">$514</label>
-          </div>
-        </div>
-        <i class="fa-regular fa-circle-plus">+</i>
-      </div>
-
-      <!-- Order details -->
+    <main class="w-full flex flex-col items-center px-7 py-5" id="main">
+      <div id="menu-container" class="w-full flex flex-col items-center"></div>
       <div
         class="border-b-2 flex flex-col w-full md:w-2/4 justify-between py-4 px-0 mx-auto hidden"
+        id="orderDetails"
       >
         <h1 class="text-center py-5 text-xl">Your order</h1>
-        <div class="flex justify-between py-2">
-          <label for="">Pizza <span>Remove</span></label>
-          <label for="">$14</label>
-        </div>
-        <div class="flex justify-between py-2">
-          <label for="">Pizza <span>Remove</span></label>
-          <label for="">$12</label>
-        </div>
+
+        <!-- Orders list -->
+        <div id="orders"></div>
+
         <hr class="h-1 bg-black my-3" />
         <div class="flex justify-between py-2">
           <label for="">Total Price</label>
-          <label for="">$44</label>
+          <label for="" id="totalPrice"></label>
         </div>
 
-        <button class="bg-green-500 rounded-md py-3 my-10 text-white font-bold">
+        <button
+          class="bg-green-500 rounded-md py-3 my-10 text-white font-bold"
+          id="payBtn"
+        >
           Complete Order
         </button>
       </div>
 
-      <!-- payment process -->
-      <div
-        class="w-auto flex flex-col border-2 px-5 py-4 absolute bg-white hidden"
+      <!-- Payment Process form -->
+      <form
+        class="w-auto flex flex-col border-2 px-5 py-4 absolute bg-white shadow-2xl shadow-gray-800 hidden"
+        id="paymentProcess"
       >
         <h1 class="text-center py-5 text-lg text-black font-bold">
           Enter card details
         </h1>
         <input
           type="text"
-          name=""
+          name="name"
           id=""
           placeholder="Enter your name"
           class="my-2 rounded-md py-3"
         />
         <input
           type="tel"
-          name=""
+          name="cardNo"
           placeholder="Enter card number"
           class="my-2 rounded-md py-3"
         />
         <input
           type="tel"
-          name=""
+          name="cvv"
           placeholder="Enter CVV"
           class="my-2 rounded-md py-3"
         />
+        <label
+          for=""
+          class="text-red-500 text-right text-sm pr-2"
+          id="errorMsg"
+        ></label>
         <button
           class="w-full bg-green-500 rounded-md py-3 mt-10 text-white font-bold"
         >
           Pay
         </button>
-      </div>
+      </form>
 
-      <!-- confirmation -->
+      <!-- Order Confirmation -->
       <div
-        class="border-b-2 w-full md:w-2/4 py-12 px-3 my-8 mx-auto bg-green-100"
+        class="border-b-2 w-full md:w-2/4 py-12 px-3 my-8 mx-auto bg-green-100 hidden"
+        id="confirmation"
       >
         <h1 class="text-center text-green-900 font-bold text-xl">
           Thanks, James! Your order is on its way!
         </h1>
       </div>
     </main>
+
+    <script src="index.js" type="module"></script>
   </body>
 </html>
