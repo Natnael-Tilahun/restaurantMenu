@@ -45,16 +45,16 @@ function render() {
         class="border-b-2 flex w-full md:w-2/4 justify-between items-center py-12 px-0 mx-auto"
         id="menu-card"
       >
-        <div class="flex gap-3 md:gap-8">
-          <label class="text-9xl border-none">${menu.emoji}</label>
+        <div class="flex gap-3 md:gap-6">
+          <label class="text-9xl border-none w-44">${menu.emoji}</label>
           <div class="flex flex-col gap-2">
-            <h1>${menu.name}</h1>
+            <h1 class=" text-2xl">${menu.name}</h1>
             <p class="text-gray-500"><span>${menu.ingredients.map(
               (ingredient) => {
                 return ingredient;
               }
             )}</span></p>
-            <label for="">$${menu.price}</label>
+            <label for="" class="font-medium">$${menu.price}</label>
           </div>
         </div>
         <i class="fa-solid fa-circle-plus text-4xl cursor-pointer" data-id = "${
