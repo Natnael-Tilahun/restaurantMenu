@@ -57,7 +57,7 @@ function render() {
             <label for="">$${menu.price}</label>
           </div>
         </div>
-        <i class="fa-regular fa-circle-plus" data-id = "${menu.id}"></i>
+        <i class="fa-solid fa-circle-plus" data-id = "${menu.id}"></i>
       </div>
     `;
 
