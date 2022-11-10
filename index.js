@@ -46,7 +46,7 @@ function render() {
         id="menu-card"
       >
         <div class="flex gap-3 md:gap-8">
-          <label class="text-9xl">${menu.emoji}</label>
+          <label class="text-9xl border-none">${menu.emoji}</label>
           <div class="flex flex-col gap-2">
             <h1>${menu.name}</h1>
             <p class="text-gray-500"><span>${menu.ingredients.map(
@@ -57,7 +57,9 @@ function render() {
             <label for="">$${menu.price}</label>
           </div>
         </div>
-        <i class="fa-solid fa-circle-plus text-2xl" data-id = "${menu.id}"></i>
+        <i class="fa-solid fa-circle-plus text-4xl cursor-pointer" data-id = "${
+          menu.id
+        }"></i>
       </div>
     `;
 
