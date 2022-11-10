@@ -45,8 +45,10 @@ function render() {
         class="border-b-2 flex w-full md:w-2/4 justify-between items-center py-12 px-0 mx-auto"
         id="menu-card"
       >
-        <div class="flex gap-3 md:gap-6">
-          <label class="text-9xl border-none w-44">${menu.emoji}</label>
+        <div class="flex gap-3 md:gap-6 items-center">
+          <label class=" text-4xl md:text-9xl border-none md:w-44">${
+            menu.emoji
+          }</label>
           <div class="flex flex-col gap-2">
             <h1 class=" text-2xl">${menu.name}</h1>
             <p class="text-gray-500"><span>${menu.ingredients.map(
@@ -90,8 +92,8 @@ function handleSelectdMenu(menuId) {
 
   orderedMenu.map((menu) => {
     orders.innerHTML += `<div class="flex justify-between py-2">
-          <label for="" class="removeBtn" >${menu.name} <span class="pl-3 text-gray-600" id = "${menu.id}">Remove</span></label>
-          <label for="">${menu.price}</label>
+          <label for="" class="removeBtn" ><span class="text-xl font-medium">${menu.name} </span><span class="pl-3 text-gray-600 text-base" id = "${menu.id}">Remove</span></label>
+          <label for="" class="text-lg font-medium">${menu.price}</label>
         </div>`;
   });
 
@@ -109,7 +111,7 @@ function handleRemoveSelectedMenu(menuId) {
 
   orderedMenu.map((order) => {
     orders.innerHTML += `<div class="flex justify-between py-2">
-          <label for="" class="removeBtn" >${order.name} <span class="pl-3 text-gray-600" id = "${order.id}">Remove</span></label>
+          <label for="" class="removeBtn" ><span class="text-xl font-medium">${order.name}</span> <span class="pl-3 text-gray-600" id = "${order.id}">Remove</span></label>
           <label for="">${order.price}</label>
         </div>`;
   });
