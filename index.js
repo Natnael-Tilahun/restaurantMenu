@@ -93,11 +93,11 @@ function handleSelectdMenu(menuId) {
   orderedMenu.map((menu) => {
     orders.innerHTML += `<div class="flex justify-between py-2">
           <label for="" class="removeBtn" ><span class="text-xl font-medium">${menu.name} </span><span class="pl-3 text-gray-600 text-base" id = "${menu.id}">Remove</span></label>
-          <label for="" class="text-lg font-medium">${menu.price}</label>
+          <label for="" class="text-lg font-medium">$${menu.price}</label>
         </div>`;
   });
 
-  totalPrice.innerHTML = total;
+  totalPrice.innerHTML = `$ ${total}`;
 }
 
 function handleRemoveSelectedMenu(menuId) {
@@ -112,10 +112,10 @@ function handleRemoveSelectedMenu(menuId) {
   orderedMenu.map((order) => {
     orders.innerHTML += `<div class="flex justify-between py-2">
           <label for="" class="removeBtn" ><span class="text-xl font-medium">${order.name}</span> <span class="pl-3 text-gray-600" id = "${order.id}">Remove</span></label>
-          <label for="">${order.price}</label>
+          <label for="">$${order.price}</label>
         </div>`;
   });
-  totalPrice.innerHTML = total;
+  totalPrice.innerHTML = `$ ${total}`;
   total == 0 && (orderDetails.style.display = "none");
 }
 
