@@ -45,8 +45,8 @@ function render() {
         class="border-b-2 flex w-full md:w-2/4 justify-between items-center py-12 px-0 mx-auto"
         id="menu-card"
       >
-        <div class="flex gap-3 md:gap-6">
-          <img src="${menu.emoji}" alt="pizza image" />
+        <div class="flex gap-3 md:gap-8">
+          <label class="text-9xl">${menu.emoji}</label>
           <div class="flex flex-col gap-2">
             <h1>${menu.name}</h1>
             <p class="text-gray-500"><span>${menu.ingredients.map(
@@ -57,7 +57,9 @@ function render() {
             <label for="">$${menu.price}</label>
           </div>
         </div>
-        <i class="fa-solid fa-circle-plus" data-id = "${menu.id}"></i>
+        <i class="fa-solid fa-circle-plus text-black bg-white" data-id = "${
+          menu.id
+        }"></i>
       </div>
     `;
 
